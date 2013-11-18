@@ -1,18 +1,21 @@
 ﻿using System.Linq;
 using Microsoft.Build.Construction;
 
-static class ProjectTargetElementExtensions
+namespace MSBuildTaskParameterLogger.Extensions
 {
-    public static ProjectTaskElement AddTask<TTask>(this ProjectTargetElement projectTargetElement)
+    static class ProjectTargetElementExtensions
     {
-        string taskName = typeof (TTask).Name;
-        ProjectRootElement projectRootElement = projectTargetElement.ContainingProject;
-
-        if (!projectRootElement.UsingTasks.Any(ut => ut.TaskName == taskName))
+        public static ProjectTaskElement AddTask<TTask>(this ProjectTargetElement projectTargetElement)
         {
-            projectRootElement.AddUsingTask<TTask>();
-        }
+            string taskName = typeof(TTask).Name;
+            ProjectRootElement projectRootElement = projectTargetElement.ContainingProject;
 
-        return projectTargetElement.AddTask(taskName);
+            if (!projectRootElement.UsingTasks.Any(ut => ut.TaskName == taskName))
+            {
+                projectRootElement.AddUsingTask<TTask>();
+            }
+
+            return projectTargetElement.AddTask(taskName);
+        }
     }
 }

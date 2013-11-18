@@ -1,7 +1,7 @@
 using System;
 using System.Reflection;
 
-namespace UnitTestProject2
+namespace MSBuildTaskParameterLogger.Extensions
 {
     public static class PropertyInfoExtensions
     {

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace UnitTestProject2
+namespace MSBuildTaskParameterLogger
 {
     class StringLogger : ILogger
     {

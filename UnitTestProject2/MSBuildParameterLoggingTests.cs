@@ -1,16 +1,12 @@
-﻿using System;
-using System.Runtime.Remoting;
-using System.Text;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Microsoft.Build.Framework;
-using System.Diagnostics;
-using Microsoft.Build.BuildEngine;
+﻿using Microsoft.Build.Construction;
 using Microsoft.Build.Execution;
-using Microsoft.Build.Construction;
+using Microsoft.Build.Framework;
 using Microsoft.Build.Utilities;
-using UnitTestProject2.Extensions;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using MSBuildTaskParameterLogger;
+using MSBuildTaskParameterLogger.Extensions;
 
-namespace UnitTestProject2
+namespace MSBuildTaskParameterLogger
 {
     [TestClass]
     public class MSBuildParameterLoggingTests
